@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Tracking\Cart\Api\FetchAllCartDetailsInterface"  type="Tracking\Cart\Model\FetchAllCartDetailsRepository" />
-    <preference for="Tracking\Cart\Api\GetOneCartDetailsInterface"  type="Tracking\Cart\Model\GetOneCartDetailsRepository" />
-    <preference for="Tracking\Cart\Api\SaveCartDetailsInterface"  type="Tracking\Cart\Model\SaveCartDetailsRepository" />
-    <preference for="Tracking\Cart\Api\UpdateCartDetailsInterface"  type="Tracking\Cart\Model\UpdateCartDetailsRepository" />
-    <preference for="Tracking\Cart\Api\DeleteCartDetailsInterface"  type="Tracking\Cart\Model\DeleteCartDetailsRepository" />
-    <preference for="Tracking\Cart\Api\Data\CartInterface"  type="Tracking\Cart\Model\Data\Cart" />
-</config>
