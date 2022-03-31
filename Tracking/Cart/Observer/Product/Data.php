@@ -7,7 +7,6 @@ use Magento\Framework\Event\ObserverInterface;
 use Tracking\Cart\Model\CartdataFactory as CartModel;
 use Tracking\Cart\Model\ResourceModel\Cartdata as CartResource;
 use Magento\Customer\Model\Session;
-use Psr\Log\LoggerInterface;
 use Magento\Framework\App\Http\Context;
 use Tracking\Cart\Publisher\TrackingCart;
 
@@ -23,10 +22,6 @@ class Data implements ObserverInterface
      */
     protected  $model;
     /**
-     * @var LoggerInterface
-     */
-    protected  $logger;
-    /**
      * @var TrackingCart
      */
     protected  $publisher;
@@ -36,16 +31,13 @@ class Data implements ObserverInterface
      */
     protected  $resource;
 
-
     /**
-     * @param LoggerInterface $logger
      * @param CartModel $model
      * @param CartResource $resource
      * @param Context $httpContext
      * @param TrackingCart $publisher
      */
     public function __construct(
-        LoggerInterface$logger,
         CartModel $model,
         CartResource  $resource,
         Context $httpContext,
@@ -53,7 +45,6 @@ class Data implements ObserverInterface
     ) {
         $this->model = $model;
         $this->resource = $resource;
-        $this->logger = $logger;
         $this->httpContext = $httpContext;
         $this->publisher = $publisher;
     }
