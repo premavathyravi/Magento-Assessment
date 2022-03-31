@@ -15,21 +15,21 @@ class Data implements ObserverInterface
     /**
      * @var Context
      */
-    protected  $httpContext;
+    protected $httpContext;
 
     /**
      * @var CartModel
      */
-    protected  $model;
+    protected $model;
     /**
      * @var TrackingCart
      */
-    protected  $publisher;
+    protected $publisher;
 
     /**
      * @var CartResource
      */
-    protected  $resource;
+    protected $resource;
 
     /**
      * @param CartModel $model
@@ -78,6 +78,5 @@ class Data implements ObserverInterface
             "quote_id" => $quoteId
         ];
         $this->publisher->publish($cartarr);
-
     }
 }
