@@ -1,0 +1,14 @@
+{
+    "track_cart": {
+        "column": {
+            "id": true,
+            "sku": true,
+            "customer_id": true,
+            "quote_id": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
