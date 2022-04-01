@@ -6,6 +6,6 @@ class Cartdata extends \Magento\Framework\Model\AbstractModel
 {
     public function _construct()
     {
-        $this->_init("Tracking\Cart\Model\ResourceModel\Cartdata");
+        $this->_init(\Tracking\Cart\Model\ResourceModel\Cartdata::class);
     }
 }

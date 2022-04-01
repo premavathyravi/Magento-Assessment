@@ -6,6 +6,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 {
     public function _construct()
     {
-        $this->_init("Tracking\Cart\Model\Cartdata", "Tracking\Cart\Model\ResourceModel\Cartdata");
+        $this->_init(\Tracking\Cart\Model\Cartdata::class, \Tracking\Cart\Model\ResourceModel\Cartdata::class);
     }
 }
