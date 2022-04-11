@@ -7,14 +7,26 @@ use Import\CustomerCreation\Model\Import\CustomerImport;
 class Import extends CustomerImport
 {
 
+    /**
+     * @var CustomerImport
+     */
     private $customerImport;
 
+    /**
+     * @param CustomerImport $customerImport
+     */
     public function __construct(
         CustomerImport $customerImport
     ) {
         $this->customerImport = $customerImport;
     }
 
+    /**
+     * @param array $data
+     * @param int $websiteId
+     * @param int $storeId
+     * @return void
+     */
     public function createCustomer(array $data, int $websiteId, int $storeId): void
     {
         try {

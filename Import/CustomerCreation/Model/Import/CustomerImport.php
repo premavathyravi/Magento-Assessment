@@ -6,6 +6,10 @@ use Magento\CustomerImportExport\Model\Import\Customer;
 
 class CustomerImport extends Customer
 {
+    /**
+     * @param array $rowData
+     * @return mixed|null
+     */
     public function importCustomerData(array $rowData)
     {
         $this->prepareCustomerData($rowData);

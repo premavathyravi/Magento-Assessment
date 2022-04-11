@@ -21,11 +21,29 @@ class CreateCustomers extends Command
 {
     const PROFILE = 'profile';
 
+    /**
+     * @var Filesystem
+     */
     private $filesystem;
+    /**
+     * @var Customer
+     */
     private $customer;
+    /**
+     * @var State
+     */
     private $state;
+    /**
+     * @var File
+     */
     private $filesystemIo;
 
+    /**
+     * @param Filesystem $filesystem
+     * @param File $filesystemIo
+     * @param Customer $customer
+     * @param State $state
+     */
     public function __construct(
         Filesystem $filesystem,
         File $filesystemIo,
@@ -38,6 +56,10 @@ class CreateCustomers extends Command
         $this->customer = $customer;
         $this->state = $state;
     }
+
+    /**
+     * @return void
+     */
     public function configure(): void
     {
         $options = [
@@ -55,6 +77,11 @@ class CreateCustomers extends Command
              ->addArgument('import_path', InputArgument::REQUIRED, '');
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|null
+     */
     public function execute(InputInterface $input, OutputInterface $output): ?int
     {
         try {
@@ -82,7 +109,8 @@ class CreateCustomers extends Command
                 throw new FileSystemException(__('No such file found '.$filename));
             }
 
-            $this->customer->install($copyFileFullPath, $output, $extension);
+            $this->customer->fileProcessor($copyFileFullPath, $output, $extension);
+
         } catch (LocalizedException $e) {
             $msg = $e->getMessage();
             $output->writeln("<error>$msg</error>", OutputInterface::OUTPUT_NORMAL);
